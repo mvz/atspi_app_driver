@@ -9,9 +9,10 @@ Gem::Specification.new do |s|
   s.homepage = 'http://www.github.com/mvz/atspi_app_driver'
 
   s.files =
-    Dir['lib/**/*.rb', '*.md', 'LICENSE'] &
+    Dir['lib/**/*.rb', '*.md', 'LICENSE', 'gems.rb'] &
     `git ls-files -z`.split('\0')
 
   s.add_dependency('gir_ffi', ['~> 0.7.9'])
+  s.add_development_dependency('bundler', ['~> 1.9'])
 end
 

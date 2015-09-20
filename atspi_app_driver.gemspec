@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
     'gems.rb'
   ]
 
-  s.add_dependency('gir_ffi', ['~> 0.7.9'])
+  s.add_dependency('gir_ffi', ['~> 0.8.0'])
   s.add_development_dependency('bundler', ['~> 1.9'])
   s.add_development_dependency('rake', ['~> 10.1'])
 end

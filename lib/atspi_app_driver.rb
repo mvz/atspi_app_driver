@@ -87,8 +87,12 @@ class AtspiAppDriver
     raise 'App not found' unless acc
 
     frame = acc.get_child_at_index 0
-    frame.role.must_equal :frame
-    frame.grab_focus
+    role = frame.role
+    raise "Frame has unexpected role #{role.inspect}" unless role == :frame
+
+    wait_for('frame to be focused', 10) do
+      frame.get_state_set.get_states.to_a.include? :active
+    end
 
     frame
   end

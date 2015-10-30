@@ -27,7 +27,10 @@ class Application
   end
 
   def connect_destroy_signal
-    @win.signal_connect("destroy") { Gtk.main_quit }
+    @win.signal_connect('destroy') {
+      puts 'Destroyed'
+      Gtk.main_quit
+    }
   end
 
   def connect_key_press_event_signal
@@ -40,6 +43,7 @@ class Application
   def handle_key(evt)
     case evt.keyval
     when "q".ord
+      puts 'Got Ctrl-Q'
       @win.destroy
     end
   end
@@ -51,3 +55,4 @@ end
 
 puts 'About to start application'
 Application.new.run
+puts 'Finished'

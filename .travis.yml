@@ -5,7 +5,7 @@ install:
   - bundle install --retry=3
 before_install:
   - sudo apt-get update
-  - sudo apt-get install dbus
+  - sudo apt-get install dbus dbus-x11
   - sudo apt-get install at-spi2-core
   - sudo apt-get install libgirepository1.0-dev gobject-introspection
   - sudo apt-get install gir1.2-atspi-2.0 libatk-adaptor
@@ -15,4 +15,4 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start 
-script: "dbus-run-session bundle exec rake test"
+script: "dbus-launch bundle exec rake test"

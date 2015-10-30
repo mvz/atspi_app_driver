@@ -15,6 +15,4 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start 
-  - /usr/lib/at-spi2-core/at-spi-bus-launcher
-  - ps -Af
-script: "bundle exec rake test"
+script: "dbus-run-session bundle exec rake test"

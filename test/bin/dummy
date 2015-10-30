@@ -5,6 +5,8 @@ require "gir_ffi-gtk3"
 
 Gtk.init
 
+puts `ps -Af`
+
 class Application
   def initialize
     setup_gui

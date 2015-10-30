@@ -3,18 +3,19 @@
 
 require "gir_ffi-gtk3"
 
+puts 'About to init Gtk'
 Gtk.init
-
-puts `ps -Af`
 
 class Application
   def initialize
+    puts 'initialize'
     setup_gui
     connect_signals
     @win.show_all
   end
 
   def run
+    puts 'run'
     Gtk.main
   end
 
@@ -48,4 +49,5 @@ class Application
   end
 end
 
+puts 'About to start application'
 Application.new.run

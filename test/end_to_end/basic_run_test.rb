@@ -5,7 +5,7 @@ require "atspi_app_driver"
 
 describe "test driving a dummy application" do
   before do
-    @driver = AtspiAppDriver.new("dummy", app_file: "test/bin/dummy")
+    @driver = AtspiAppDriver.new("dummy", app_file: "test/bin/dummy", verbose: true)
     @driver.boot
   end
 

@@ -50,6 +50,7 @@ class AtspiAppDriver
   attr_reader :frame
 
   def boot(test_timeout: 30, exit_timeout: 10, arguments: [])
+    warn 'Booting'
     raise "Already booted" if @pid
 
     spawn_process(arguments)

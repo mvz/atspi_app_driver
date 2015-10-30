@@ -34,8 +34,8 @@ Atspi::Accessible.include AtspiAccessiblePatches
 # Test driver for the Atspi-enabled applications. Takes care of boot and
 # shutdown, and provides a handle on the GUI's main UI frame.
 class AtspiAppDriver
-  def initialize(app_name, verbose: false)
-    @app_file = "bin/#{app_name}"
+  def initialize(app_name, app_file: nil, verbose: false)
+    @app_file = app_file || "bin/#{app_name}"
     @lib_dir = 'lib'
     @app_name = app_name
     @pid = nil

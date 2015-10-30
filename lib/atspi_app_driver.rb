@@ -59,6 +59,8 @@ class AtspiAppDriver
 
     @frame = find_and_focus_frame
 
+    raise 'Frame not found' unless @frame 
+
     @thread = Thread.new do
       wait_for("test to be done", test_timeout) { @cleanup }
       wait_for("pid to go away", exit_timeout) { !@pid }

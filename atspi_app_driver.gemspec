@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   ]
 
   s.add_dependency('gir_ffi', ['~> 0.8.0'])
-  s.add_development_dependency('bundler', ['~> 1.9'])
+  s.add_development_dependency('bundler')
   s.add_development_dependency('minitest', ['~> 5.5'])
   s.add_development_dependency('rake', ['~> 10.1'])
   s.add_development_dependency('gir_ffi-gtk', ['~> 0.8.0'])

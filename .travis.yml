@@ -18,4 +18,5 @@ before_script:
   - sleep 3 # give xvfb some time to start 
   - "openbox &"
   - sleep 3 # give openbox some time to start 
+  - "ps -Af"
 script: "bundle exec rake test"

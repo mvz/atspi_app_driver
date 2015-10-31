@@ -1,8 +1,6 @@
 language: ruby
 rvm:
   - 2.2
-install:
-  - bundle install --retry=3
 before_install:
   - sudo apt-get update
   - sudo apt-get install dbus dbus-x11
@@ -10,13 +8,17 @@ before_install:
   - sudo apt-get install libgirepository1.0-dev gobject-introspection
   - sudo apt-get install gir1.2-atspi-2.0 libatk-adaptor
   - sudo apt-get install libgtk-3-dev libatk1.0-dev libatspi2.0-dev
+  - sudo apt-get install gsettings-desktop-schemas
   - sudo apt-get install openbox
   - sudo service dbus restart
+install:
+  - bundle install --retry=3
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start 
   - "openbox &"
   - sleep 3 # give openbox some time to start 
+  - "gsettings set org.gnome.desktop.interface toolkit-accessibility true"
   - "ps -Af"
 script: "bundle exec rake test"

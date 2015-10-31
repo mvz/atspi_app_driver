@@ -16,6 +16,6 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start 
-  - "DISPLAY=:99.0 openbox &"
+  - "openbox &"
   - sleep 3 # give openbox some time to start 
-script: "dbus-launch bundle exec rake test"
+script: "bundle exec rake test"

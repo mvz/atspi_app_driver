@@ -2,7 +2,9 @@ language: ruby
 rvm:
   - 2.2
 before_install:
-  - sudo apt-get update
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - "sudo apt-get update -qq"
   - sudo apt-get install dbus dbus-x11
   - sudo apt-get install at-spi2-core
   - sudo apt-get install libgirepository1.0-dev gobject-introspection
@@ -10,16 +12,10 @@ before_install:
   - sudo apt-get install libgtk-3-dev libatk1.0-dev libatspi2.0-dev
   - sudo apt-get install gsettings-desktop-schemas
   - sudo apt-get install gnome-session
-  - sudo service dbus restart
+  - sudo apt-get install python-gi gtk-3-examples gir1.2-gtk-3.0 python-gi-cairo python-pyatspi python-dbus gnome-screenshot language-pack-gnome-en
 install:
+  - "gsettings set org.gnome.desktop.interface toolkit-accessibility true"
   - bundle install --retry=3
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start 
-  - "gnome-session &"
-  - sleep 3 # give gnome-session some time to start
-  - "gsettings set org.gnome.desktop.interface toolkit-accessibility true"
-  - sleep 1
   - "ps -Af"
 script: "bundle exec rake test"

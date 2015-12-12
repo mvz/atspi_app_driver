@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
     'README.md',
     'LICENSE',
     'Rakefile',
-    'gems.rb'
+    'Gemfile'
   ]
 
   s.add_dependency('gir_ffi', ['~> 0.8.0'])

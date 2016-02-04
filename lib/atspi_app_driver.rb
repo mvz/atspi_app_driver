@@ -41,6 +41,7 @@ class AtspiAppDriver
     @pid = nil
     @verbose = verbose
     @frame = nil
+    @thread = nil
   end
 
   attr_reader :frame

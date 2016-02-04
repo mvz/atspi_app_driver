@@ -1,5 +1,10 @@
 # Change log
 
+## 0.0.5 / 2016-02-04
+
+* Depend on GirFFI 0.9.x
+* Fix boot failure handling
+
 ## 0.0.4 / 2015-12-12
 
 * Loosen dependencies

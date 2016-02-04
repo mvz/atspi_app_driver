@@ -18,3 +18,17 @@ describe 'When test driving a dummy application' do
     @driver.cleanup
   end
 end
+
+describe "When test driving an application that doesn't create an accessible window" do
+  before do
+    @driver = AtspiAppDriver.new('dummy', app_file: 'test/bin/no_window')
+  end
+
+  it 'will fail to boot' do
+    proc { @driver.boot }.must_raise RuntimeError, /App not/
+  end
+
+  after do
+    @driver.cleanup
+  end
+end

@@ -114,17 +114,18 @@ class AtspiAppDriver
     nil
   end
 
-  # TODO: User timeout
+  # TODO: Use timeout
   def wait_for(description, _timeout)
     start = Time.now
+    result = nil
     # Try for 0.01 * 50 * (50 + 1) / 2 = 12.75 seconds
-    value = 50.times.each do |num|
+    50.times do |num|
       result = yield
-      break result if result
+      break if result
       sleep 0.01 * (num + 1)
     end
     log "Waited #{Time.now - start} seconds for #{description}"
-    value
+    result
   end
 
   def exit_status

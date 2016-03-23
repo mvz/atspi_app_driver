@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'atspi_app_driver'
-  s.version = '0.0.5'
+  s.version = '0.0.6'
 
   s.summary = 'Test GNOME applications using Atspi'
 

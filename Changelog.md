@@ -1,5 +1,9 @@
 # Change log
 
+## 0.0.7 / 2016-10-16
+
+* Depend on GirFFI 0.11.x
+
 ## 0.0.6 / 2016-03-23
 
 * Depend on GirFFI 0.10.x

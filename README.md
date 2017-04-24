@@ -88,5 +88,5 @@ on GitHub.
 
 ## License
 
-Copyright &copy; 2015 [Matijs van Zuijlen](http://www.matijs.net).
+Copyright &copy; 2015-2017 [Matijs van Zuijlen](http://www.matijs.net).
 See LICENSE for details.

@@ -1,5 +1,9 @@
 # Change log
 
+## 0.1.0 / 2017-04-25
+
+* Use Ruby-GNOME2 instead of GirFFI to provide GLib bindings
+
 ## 0.0.7 / 2016-10-16
 
 * Depend on GirFFI 0.11.x

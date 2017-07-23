@@ -1,0 +1,31 @@
+---
+- - :whitelist
+  - LGPL-2.1+
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2017-07-23 08:26:28.235886179 Z
+- - :whitelist
+  - MIT
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2017-07-23 08:26:32.921044461 Z
+- - :whitelist
+  - LGPLv2+
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2017-07-23 08:26:45.647254737 Z
+- - :whitelist
+  - LGPL-3+
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2017-07-23 08:26:50.566401469 Z
+- - :approve
+  - cairo
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2017-07-23 08:26:59.771629349 Z

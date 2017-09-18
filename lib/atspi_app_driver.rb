@@ -1,5 +1,7 @@
 require 'gobject-introspection'
 
+# Namespace for Atspi classes. Autoloading with GObjectIntrospection is set up
+# here.
 module Atspi
   class << self
     def const_missing(name)

@@ -1,7 +1,7 @@
 require_relative '../test_helper'
 require 'atspi_app_driver'
 
-describe 'When test driving a dummy application' do
+describe 'test driving a dummy application' do
   before do
     @driver = AtspiAppDriver.new('dummy', app_file: 'test/bin/dummy')
     @driver.boot
@@ -19,7 +19,7 @@ describe 'When test driving a dummy application' do
   end
 end
 
-describe "When test driving an application that doesn't create an accessible window" do
+describe 'test driving an application without an accessible window' do
   before do
     @driver = AtspiAppDriver.new('dummy', app_file: 'test/bin/no_window')
   end

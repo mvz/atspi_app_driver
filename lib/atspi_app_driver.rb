@@ -1,28 +1,7 @@
-require 'gobject-introspection'
+require 'gir_ffi'
 
-# Namespace for Atspi classes. Autoloading with GObjectIntrospection is set up
-# here.
-module Atspi
-  class << self
-    def const_missing(name)
-      init
-      if const_defined?(name)
-        const_get(name)
-      else
-        super
-      end
-    end
-
-    def init
-      class << self
-        remove_method(:init)
-        remove_method(:const_missing)
-      end
-      loader = GObjectIntrospection::Loader.new(self)
-      loader.load('Atspi')
-    end
-  end
-end
+GirFFI.setup :Atspi
+Atspi.load_class :Accessible
 
 # Utility monkey-patches for the Atspi::Accessible class
 module AtspiAccessiblePatches
@@ -113,7 +92,7 @@ class AtspiAppDriver
     raise "Frame has unexpected role #{role.inspect}" unless role == :frame
 
     wait_for('frame to be focused', 10) do
-      frame.state_set.contains(Atspi::StateType::ACTIVE)
+      frame.get_state_set.get_states.to_a.include? :active
     end
 
     frame

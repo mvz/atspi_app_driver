@@ -29,3 +29,15 @@
     :why: 
     :versions: []
     :when: 2017-07-23 08:26:59.771629349 Z
+- - :whitelist
+  - New BSD
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2017-11-05 14:26:33.484403639 Z
+- - :whitelist
+  - LGPL-2.1
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2017-11-05 14:26:43.080893712 Z

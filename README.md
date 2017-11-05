@@ -1,7 +1,7 @@
 # Atspi App Driver
 
-Test driver for the Atspi-enabled applications. Takes care of boot and
-shutdown, and provides a handle on the GUI's main UI frame.
+Test driver for the Atspi-enabled applications using GirFFI. Takes care of boot
+and shutdown, and provides a handle on the GUI's main UI frame.
 
 ## Usage
 

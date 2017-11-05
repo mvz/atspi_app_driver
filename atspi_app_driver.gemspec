@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name = 'atspi_app_driver'
-  s.version = '0.1.0'
+  s.version = '0.2.0'
 
-  s.summary = 'Test GNOME applications using Atspi'
+  s.summary = 'Test GirFFI-based applications using Atspi'
 
   s.authors = ['Matijs van Zuijlen']
   s.email = ['matijs@matijs.net']

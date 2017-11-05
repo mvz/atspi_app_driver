@@ -1,5 +1,10 @@
 # Change log
 
+## 0.2.0 / 2017-11-05
+
+* Revert to using GirFFI to provide GLib bindings. Use gnome_app_driver if you
+  want to drive a Ruby-GNOME2 application.
+
 ## 0.1.0 / 2017-04-25
 
 * Use Ruby-GNOME2 instead of GirFFI to provide GLib bindings

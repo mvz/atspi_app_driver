@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gir_ffi'
 
 GirFFI.setup :Atspi
@@ -77,7 +79,7 @@ class AtspiAppDriver
   def cleanup
     status = exit_status
     @pid = nil
-    @thread.join if @thread
+    @thread&.join
     status
   end
 

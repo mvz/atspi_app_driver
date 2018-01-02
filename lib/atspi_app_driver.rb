@@ -77,7 +77,7 @@ class AtspiAppDriver
   def cleanup
     status = exit_status
     @pid = nil
-    @thread.join if @thread
+    @thread&.join
     status
   end
 

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'atspi_app_driver'
-  s.version = '0.2.0'
+  s.version = '0.3.0'
 
   s.summary = 'Test GirFFI-based applications using Atspi'
   s.required_ruby_version = '>= 2.3.0'

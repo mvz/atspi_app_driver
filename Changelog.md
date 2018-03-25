@@ -1,5 +1,10 @@
 # Change log
 
+## 0.3.0 / 2018-03-25
+
+* Depend on GirFFI 0.12.0  and GirFFI-Gtk 0.12.0
+* Drop support for Ruby versions below 2.3
+
 ## 0.2.0 / 2017-11-05
 
 * Revert to using GirFFI to provide GLib bindings. Use gnome_app_driver if you

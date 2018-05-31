@@ -1,4 +1,8 @@
-# Change log
+# Changelog
+
+## 0.3.1 / 2018-05-31
+
+* Restore support for Ruby 2.1 and 2.2
 
 ## 0.3.0 / 2018-03-25
 

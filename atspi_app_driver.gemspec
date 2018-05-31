@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version = '0.3.0'
 
   s.summary = 'Test GirFFI-based applications using Atspi'
-  s.required_ruby_version = '>= 2.3.0'
+  s.required_ruby_version = '>= 2.1.0'
 
   s.authors = ['Matijs van Zuijlen']
   s.email = ['matijs@matijs.net']

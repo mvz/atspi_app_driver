@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0 / 2018-09-08
+
+* Drop support for Ruby 2.1
+* Depend on GirFFI 0.13.0  and GirFFI-Gtk 0.13.0
+
 ## 0.3.1 / 2018-05-31
 
 * Restore support for Ruby 2.1 and 2.2
@@ -11,7 +16,7 @@
 
 ## 0.2.0 / 2017-11-05
 
-* Revert to using GirFFI to provide GLib bindings. Use gnome_app_driver if you
+* Revert to using GirFFI to provide GLib bindings. Use `gnome_app_driver` if you
   want to drive a Ruby-GNOME2 application.
 
 ## 0.1.0 / 2017-04-25

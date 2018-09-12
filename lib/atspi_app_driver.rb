@@ -16,6 +16,7 @@ module AtspiAccessiblePatches
 
   def find_role(role, regex = //)
     return self if role == self.role && name =~ regex
+
     each_child do |child|
       result = child.find_role role, regex
       return result if result
@@ -125,6 +126,7 @@ class AtspiAppDriver
     50.times do |num|
       result = yield
       break if result
+
       sleep 0.01 * (num + 1)
     end
     log "Waited #{Time.now - start} seconds for #{description}"
@@ -133,6 +135,7 @@ class AtspiAppDriver
 
   def exit_status
     return unless @pid
+
     @cleanup = true
     _, status = Process.wait2 @pid
     status

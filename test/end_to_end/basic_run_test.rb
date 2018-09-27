@@ -16,6 +16,13 @@ describe 'test driving a dummy application' do
     status.exitstatus.must_equal 0
   end
 
+  it 'can be interacted with' do
+    frame = @driver.frame.find_role :frame
+    frame.wont_be_nil
+
+    @driver.press_ctrl_q
+  end
+
   after do
     @driver.cleanup
   end

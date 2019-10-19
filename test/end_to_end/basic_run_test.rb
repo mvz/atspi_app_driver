@@ -13,12 +13,12 @@ describe 'test driving a dummy application' do
     @driver.press_ctrl_q
 
     status = @driver.cleanup
-    status.exitstatus.must_equal 0
+    _(status.exitstatus).must_equal 0
   end
 
   it 'can be interacted with' do
     frame = @driver.frame.find_role :frame
-    frame.wont_be_nil
+    _(frame).wont_be_nil
 
     @driver.press_ctrl_q
   end
@@ -34,7 +34,7 @@ describe 'test driving an application without an accessible window' do
   end
 
   it 'will fail to boot' do
-    proc { @driver.boot }.must_raise RuntimeError, /App not/
+    _(proc { @driver.boot }).must_raise RuntimeError, /App not/
   end
 
   after do

@@ -1,13 +1,18 @@
 # Changelog
 
+## 0.6.0 / 2019-10-19
+
+* Depend on GirFFI 0.15.0 and GirFFI-Gtk 0.15.0
+* Drop support for Ruby versions 2.2 and 2.3
+
 ## 0.5.0 / 2018-09-27
 
-* Depend on GirFFI 0.14.0  and GirFFI-Gtk 0.14.0
+* Depend on GirFFI 0.14.0 and GirFFI-Gtk 0.14.0
 
 ## 0.4.0 / 2018-09-08
 
 * Drop support for Ruby 2.1
-* Depend on GirFFI 0.13.0  and GirFFI-Gtk 0.13.0
+* Depend on GirFFI 0.13.0 and GirFFI-Gtk 0.13.0
 
 ## 0.3.1 / 2018-05-31
 

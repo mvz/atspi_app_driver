@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'gir_ffi-gtk3'
+require "gir_ffi-gtk3"
 
 Gtk.init
 
@@ -24,11 +24,11 @@ class Application
   end
 
   def connect_destroy_signal
-    @win.signal_connect('destroy') { Gtk.main_quit }
+    @win.signal_connect("destroy") { Gtk.main_quit }
   end
 
   def connect_key_press_event_signal
-    @win.signal_connect 'key-press-event' do |_wdg, evt, _ud|
+    @win.signal_connect "key-press-event" do |_wdg, evt, _ud|
       handle_key(evt) if evt.state[:control_mask]
       false
     end
@@ -36,7 +36,7 @@ class Application
 
   def handle_key(evt)
     case evt.keyval
-    when 'q'.ord
+    when "q".ord
       @win.destroy
     end
   end

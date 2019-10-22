@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'gir_ffi'
+require "gir_ffi"
 
 GirFFI.setup :Atspi
 Atspi.load_class :Accessible
@@ -39,7 +39,7 @@ Atspi::Accessible.include AtspiAccessiblePatches
 class AtspiAppDriver
   def initialize(app_name, app_file: nil, verbose: false)
     @app_file = app_file || "bin/#{app_name}"
-    @lib_dir = 'lib'
+    @lib_dir = "lib"
     @app_name = app_name
     @pid = nil
     @verbose = verbose
@@ -50,7 +50,7 @@ class AtspiAppDriver
   attr_reader :frame
 
   def boot(test_timeout: 30, exit_timeout: 10, arguments: [])
-    raise 'Already booted' if @pid
+    raise "Already booted" if @pid
 
     spawn_process(arguments)
 
@@ -59,8 +59,8 @@ class AtspiAppDriver
     @frame = find_and_focus_frame
 
     @thread = Thread.new do
-      wait_for('test to be done', test_timeout) { @cleanup }
-      wait_for('pid to go away', exit_timeout) { !@pid }
+      wait_for("test to be done", test_timeout) { @cleanup }
+      wait_for("pid to go away", exit_timeout) { !@pid }
       kill_process if @pid
     end
   end
@@ -87,14 +87,14 @@ class AtspiAppDriver
   private
 
   def find_and_focus_frame
-    acc = wait_for('app to appear', 10) { find_app }
-    raise 'App not found' unless acc
+    acc = wait_for("app to appear", 10) { find_app }
+    raise "App not found" unless acc
 
     frame = acc.get_child_at_index 0
     role = frame.role
     raise "Frame has unexpected role #{role.inspect}" unless role == :frame
 
-    wait_for('frame to be focused', 10) do
+    wait_for("frame to be focused", 10) do
       frame.get_state_set.get_states.to_a.include? :active
     end
 
@@ -103,7 +103,7 @@ class AtspiAppDriver
 
   def kill_process
     log "About to kill child process #{@pid}"
-    Process.kill 'KILL', @pid
+    Process.kill "KILL", @pid
   end
 
   def log(message)

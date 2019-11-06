@@ -26,7 +26,7 @@ before_script:
   - "ps -Af"
 
 # We shoundn't need this anymore I think
-script: "xvfb-run dbus-launch bundle exec rake test"
+script: "bundle exec rake test"
 
 rvm:
   - 2.6

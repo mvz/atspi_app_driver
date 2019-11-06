@@ -2,31 +2,20 @@ language: ruby
 
 dist: xenial
 
-# Read op on https://docs.travis-ci.com/user/gui-and-headless-browsers/
 services:
   - xvfb
 
 before_install:
-  - sudo apt-get update -qq
+  - sudo apt-get update
   - sudo apt-get install dbus dbus-x11
-  - sudo apt-get install -y at-spi2-core avahi-daemon
-  - sudo apt-get install -y libgirepository1.0-dev gobject-introspection
-  - sudo apt-get install gir1.2-atspi-2.0 libatk-adaptor
-  - sudo apt-get install libgtk-3-dev libatk1.0-dev libatspi2.0-dev
-  - sudo apt-get install gsettings-desktop-schemas
-  - sudo apt-get install gnome-session
-  - sudo apt-get install gir1.2-gtk-3.0
-  - sudo apt-get install gnome-screenshot language-pack-gnome-en
-
-install:
-  - "gsettings set org.gnome.desktop.interface toolkit-accessibility true"
-  - bundle install --retry=3
-
-before_script:
-  - "ps -Af"
-
-# We shoundn't need this anymore I think
-script: "bundle exec rake test"
+  # Provides A11y services used by this gem to drive SUT
+  - sudo apt-get install at-spi2-core
+  - sudo apt-get install libgirepository1.0-dev gobject-introspection
+  - sudo apt-get install gir1.2-atspi-2.0
+  # NEed to whittle this down!
+  - sudo apt-get install gir1.2-webkit2-4.0
+  # We shouldn't need these since we should use the so versions in the non-dev packages.
+  - sudo apt-get install libwebkit2gtk-4.0-dev libjavascriptcoregtk-4.0-dev
 
 rvm:
   - 2.6

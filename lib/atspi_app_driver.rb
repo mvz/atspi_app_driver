@@ -50,7 +50,7 @@ class AtspiAppDriver
   attr_reader :frame
 
   def boot(test_timeout: 30, exit_timeout: 10, arguments: [])
-    warn 'Booting'
+    warn "Booting"
     raise "Already booted" if @pid
 
     spawn_process(arguments)
@@ -59,7 +59,7 @@ class AtspiAppDriver
 
     @frame = find_and_focus_frame
 
-    raise 'Frame not found' unless @frame 
+    raise "Frame not found" unless @frame
 
     @thread = Thread.new do
       wait_for("test to be done", test_timeout) { @cleanup }

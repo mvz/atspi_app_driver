@@ -75,9 +75,9 @@ class AtspiAppDriver
   end
 
   def press_ctrl_q
-    Atspi.generate_keyboard_event(37, nil, :press)
-    Atspi.generate_keyboard_event(24, nil, :pressrelease)
-    Atspi.generate_keyboard_event(37, nil, :release)
+    Atspi.generate_keyboard_event(37, nil, :press) or raise
+    Atspi.generate_keyboard_event(24, nil, :pressrelease) or raise
+    Atspi.generate_keyboard_event(37, nil, :release) or raise
   end
 
   def cleanup

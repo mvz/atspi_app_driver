@@ -1,23 +1,23 @@
 ---
-- - :whitelist
+- - :permit
   - LGPL-2.1+
   - :who: 
     :why: 
     :versions: []
     :when: 2017-07-23 08:26:28.235886179 Z
-- - :whitelist
+- - :permit
   - MIT
   - :who: 
     :why: 
     :versions: []
     :when: 2017-07-23 08:26:32.921044461 Z
-- - :whitelist
+- - :permit
   - LGPLv2+
   - :who: 
     :why: 
     :versions: []
     :when: 2017-07-23 08:26:45.647254737 Z
-- - :whitelist
+- - :permit
   - LGPL-3+
   - :who: 
     :why: 
@@ -29,13 +29,13 @@
     :why: 
     :versions: []
     :when: 2017-07-23 08:26:59.771629349 Z
-- - :whitelist
+- - :permit
   - New BSD
   - :who: 
     :why: 
     :versions: []
     :when: 2017-11-05 14:26:33.484403639 Z
-- - :whitelist
+- - :permit
   - LGPL-2.1
   - :who: 
     :why: 

@@ -1,7 +1,12 @@
-require: rubocop-performance
+require:
+  - rubocop-performance
 
 AllCops:
   TargetRubyVersion: 2.4
+
+# Be lenient with line length
+Layout/LineLength:
+  Max: 92
 
 # Don't force lonely closing parentheses
 Layout/MultilineMethodCallBraceLayout:
@@ -21,13 +26,19 @@ Layout/MultilineOperationIndentation:
 Layout/SpaceBeforeBlockBraces:
   EnforcedStyleForEmptyBraces: space
 
+# Assume the programmer knows how bracketed block syntax works
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
 # Allow if (foo = get_foo) style
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
-# Require lines to fit in pull requests.
-Metrics/LineLength:
-  Max: 92
+# Activate new cops from RuboCop 0.81
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
 
 # Allow and/or for control flow only
 Style/AndOr:
@@ -37,9 +48,23 @@ Style/AndOr:
 Style/GuardClause:
   MinBodyLength: 2
 
+# Activate new cops from RuboCop 0.80
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+
 # Sometimes an if statement just looks better than next with a guard clause
 Style/Next:
   Enabled: false
+
+# Use older RuboCop default
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%W': ()
+    '%w': ()
 
 # Allow explicit return with multiple return values
 Style/RedundantReturn:

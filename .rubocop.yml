@@ -1,7 +1,9 @@
 require:
   - rubocop-performance
+  - rubocop-minitest
 
 AllCops:
+  NewCops: enable
   TargetRubyVersion: 2.5
 
 # Be lenient with line length
@@ -34,6 +36,9 @@ Lint/AmbiguousBlockAssociation:
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
+Performance/StartWith:
+  AutoCorrect: true
+
 # Allow and/or for control flow only
 Style/AndOr:
   EnforcedStyle: conditionals
@@ -44,6 +49,10 @@ Style/GuardClause:
 
 # Sometimes an if statement just looks better than next with a guard clause
 Style/Next:
+  Enabled: false
+
+# Allow both real comparison and predicate methods
+Style/NumericPredicate:
   Enabled: false
 
 # Use older RuboCop default
@@ -67,25 +76,3 @@ Style/SymbolArray:
 # Accessors are only trivial if they match the ivar name
 Style/TrivialAccessors:
   ExactNameMatch: true
-
-# Activate new cops from RuboCop 0.80 - 0.84
-Layout/EmptyLinesAroundAttributeAccessor:
-  Enabled: true
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: true
-Lint/DeprecatedOpenSSLConstant:
-  Enabled: true
-Lint/RaiseException:
-  Enabled: true
-Lint/StructNewOverride:
-  Enabled: true
-Style/ExponentialNotation:
-  Enabled: true
-Style/HashEachMethods:
-  Enabled: true
-Style/HashTransformKeys:
-  Enabled: true
-Style/HashTransformValues:
-  Enabled: true
-Style/SlicingWithRange:
-  Enabled: true

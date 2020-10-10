@@ -115,10 +115,13 @@ class AtspiAppDriver
 
   def find_app
     desktop = Atspi.get_desktop(0)
-    log "Desktop has #{desktop.child_count} children"
+    log "Searching for #{@app_name}; desktop has #{desktop.child_count} children"
     desktop.each_child do |child|
       log "Considering child #{child.name}"
-      return child if child.name == @app_name
+      if child.name == @app_name
+        log "Found!"
+        return child
+      end
     end
     nil
   end

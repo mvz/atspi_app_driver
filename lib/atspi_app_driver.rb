@@ -137,7 +137,7 @@ class AtspiAppDriver
 
       sleep 0.01 * (num + 1)
     end
-    log "Waited #{Time.now - start} seconds for #{description}"
+    log "Waited #{Time.now - start} seconds for #{description}: result = #{result}"
     result
   end
 

@@ -1,0 +1,16 @@
+language: ruby
+
+dist: xenial
+
+cache:
+  bundler: true
+
+jobs:
+  include:
+    - rvm: 2.7.1
+      name: "RuboCop"
+      script: bundle exec rubocop
+
+branches:
+  only:
+    - master

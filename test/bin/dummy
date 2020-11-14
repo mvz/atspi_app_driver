@@ -19,7 +19,7 @@ class Application
   private
 
   def connect_signals
-    connect_key_press_event_signal
+    connect_click_signal
     connect_destroy_signal
   end
 
@@ -27,22 +27,14 @@ class Application
     @win.signal_connect("destroy") { Gtk.main_quit }
   end
 
-  def connect_key_press_event_signal
-    @win.signal_connect "key-press-event" do |_wdg, evt, _ud|
-      handle_key(evt) if evt.state[:control_mask]
-      false
-    end
-  end
-
-  def handle_key(evt)
-    case evt.keyval
-    when "q".ord
-      @win.destroy
-    end
+  def connect_click_signal
+    @button.signal_connect("clicked") { @win.destroy }
   end
 
   def setup_gui
     @win = Gtk::Window.new :toplevel
+    @button = Gtk::Button.new_with_label "Close"
+    @win.add @button
   end
 end
 

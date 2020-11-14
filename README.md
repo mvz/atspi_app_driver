@@ -40,7 +40,8 @@ Say, your application is called `foo`. Then, in your tests, do something like th
         textbox.get_text(0, 100).must_equal 'Foo bar baz'
 
         # Quit application
-        @driver.press_ctrl_q
+        menu_item = frame.find_role :menu_item, /Quit/
+        menu_item.do_action 0
 
         # Check exit status
         status = @driver.cleanup

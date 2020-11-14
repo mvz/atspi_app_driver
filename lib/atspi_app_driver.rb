@@ -71,12 +71,6 @@ class AtspiAppDriver
     @pid = Process.spawn command
   end
 
-  def press_ctrl_q
-    Atspi.generate_keyboard_event(37, nil, :press)
-    Atspi.generate_keyboard_event(24, nil, :pressrelease)
-    Atspi.generate_keyboard_event(37, nil, :release)
-  end
-
   def cleanup
     status = exit_status
     @pid = nil

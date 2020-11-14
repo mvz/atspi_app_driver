@@ -9,18 +9,13 @@ describe "test driving a dummy application" do
     @driver.boot
   end
 
-  it "starts and can be quit with Ctrl-q" do
-    @driver.press_ctrl_q
+  it "starts and can be quit by activating an action" do
+    frame = @driver.frame
+    button = frame.find_role :push_button
+    button.do_action 0
 
     status = @driver.cleanup
     _(status.exitstatus).must_equal 0
-  end
-
-  it "can be interacted with" do
-    frame = @driver.frame.find_role :frame
-    _(frame).wont_be_nil
-
-    @driver.press_ctrl_q
   end
 
   after do

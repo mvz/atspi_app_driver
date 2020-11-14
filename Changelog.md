@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.0 / 2020-11-14
+
+* Drop support for Ruby version 2.4
+* Remove AtspiAppDriver#press_ctrl_q because it does not and likely will never
+  work on Wayland. Use a regular action to quit your application instead.
+* Provide access to the main application Atspi object through AtspiAppDriver#application
+
 ## 0.6.0 / 2019-10-19
 
 * Depend on GirFFI 0.15.0 and GirFFI-Gtk 0.15.0

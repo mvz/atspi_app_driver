@@ -23,8 +23,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install non-ruby dependencies
       run: |
-        # Needed for gtk3 gem
-        sudo apt-get install libgtk-3-dev
+        # Provides libgirepository-1.0.so.1
+        sudo apt-get install libgirepository-1.0-1
+        # Provides Gtk-3.0.typelib
+        sudo apt-get install gir1.2-gtk-3.0
+        # Provides Atspi-2.0.typelib
+        sudo apt-get install gir1.2-atspi-2.0
         # Needed to provide A11y dbus service to silence warnings
         sudo apt-get install at-spi2-core
         # Provides xvfb-run

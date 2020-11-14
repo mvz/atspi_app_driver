@@ -47,7 +47,7 @@ class AtspiAppDriver
     @thread = nil
   end
 
-  attr_reader :frame
+  attr_reader :frame, :application
 
   def boot(test_timeout: 30, exit_timeout: 10, arguments: [])
     raise "Already booted" if @pid
@@ -81,10 +81,10 @@ class AtspiAppDriver
   private
 
   def find_and_focus_frame
-    acc = wait_for("app to appear", 10) { find_app }
-    raise "App not found" unless acc
+    @application = wait_for("app to appear", 10) { find_app }
+    raise "App not found" unless @application
 
-    frame = acc.get_child_at_index 0
+    frame = @application.get_child_at_index 0
     role = frame.role
     raise "Frame has unexpected role #{role.inspect}" unless role == :frame
 

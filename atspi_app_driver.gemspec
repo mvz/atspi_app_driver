@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "gir_ffi", "~> 0.15.0"
   spec.add_development_dependency "gir_ffi-gtk", "~> 0.15.0"
   spec.add_development_dependency "minitest", "~> 5.12"
-  spec.add_development_dependency "pry", "~> 0.13.1"
+  spec.add_development_dependency "pry", "~> 0.14.0"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rubocop", "~> 1.9.0"
   spec.add_development_dependency "rubocop-minitest", "~> 0.10.1"

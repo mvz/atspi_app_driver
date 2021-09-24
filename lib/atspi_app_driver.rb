@@ -25,7 +25,7 @@ module AtspiAccessiblePatches
   end
 
   def inspect_recursive(level = 0, maxlevel = 5)
-    puts "#{'  ' * level} > name: #{name}; role: #{role}"
+    puts "#{"  " * level} > name: #{name}; role: #{role}"
     each_child do |child|
       child.inspect_recursive(level + 1) unless level >= maxlevel
     end
@@ -66,7 +66,7 @@ class AtspiAppDriver
   end
 
   def spawn_process(arguments)
-    command = "ruby -I#{@lib_dir} #{@app_file} #{arguments.join(' ')}"
+    command = "ruby -I#{@lib_dir} #{@app_file} #{arguments.join(" ")}"
     log "About to spawn: `#{command}`"
     @pid = Process.spawn command
   end

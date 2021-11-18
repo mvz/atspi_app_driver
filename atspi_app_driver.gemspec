@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/mvz/atspi_app_driver"
   spec.metadata["changelog_uri"] = "https://github.com/mvz/atspi_app_driver/blob/master/Changelog.md"
+  spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.files = [
     "lib/atspi_app_driver.rb",

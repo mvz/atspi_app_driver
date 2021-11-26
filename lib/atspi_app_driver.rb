@@ -135,3 +135,5 @@ class AtspiAppDriver
     status
   end
 end
+
+require_relative "atspi_app_driver/version"

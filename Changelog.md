@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.2 / 2022-02-11
+
+* Add missing version.rb file
+
 ## 0.7.1 / 2022-01-23
 
 * Drop support for Ruby version 2.5

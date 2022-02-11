@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require "rake/clean"
 require "bundler/gem_tasks"
+require "rake/clean"
+require "rake/manifest/task"
 require "rake/testtask"
 
 namespace :test do
@@ -15,5 +16,9 @@ namespace :test do
 end
 
 task test: "test:all"
+
+Rake::Manifest::Task.new do |t|
+  t.patterns = ["{lib}/**/*", "*.md", "LICENCE.txt"]
+end
 
 task default: "test"

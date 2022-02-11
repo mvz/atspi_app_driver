@@ -1,0 +1,4 @@
+lib/atspi_app_driver.rb
+lib/atspi_app_driver/version.rb
+Changelog.md
+README.md

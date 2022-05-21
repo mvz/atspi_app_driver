@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.0 / 2022-05-21
+
+* Drop support for Ruby version 2.6
+* Depend on `gir_ffi` 0.16.0 and `gir_ffi-gtk` 0.16.0
+
 ## 0.7.2 / 2022-02-11
 
 * Add missing version.rb file

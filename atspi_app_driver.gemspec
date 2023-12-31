@@ -21,9 +21,9 @@ Gem::Specification.new do |spec|
   spec.files = File.read("Manifest.txt").split
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "gir_ffi", "~> 0.16.0"
+  spec.add_runtime_dependency "gir_ffi", "~> 0.17.0"
 
-  spec.add_development_dependency "gir_ffi-gtk", "~> 0.16.0"
+  spec.add_development_dependency "gir_ffi-gtk", "~> 0.17.0"
   spec.add_development_dependency "minitest", "~> 5.12"
   spec.add_development_dependency "pry", "~> 0.14.0"
   spec.add_development_dependency "rake", "~> 13.0"

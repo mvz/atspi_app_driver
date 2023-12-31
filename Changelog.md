@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.9.0 / 2023-12-31
+
+* Drop support for Ruby version 2.7
+* Depend on GirFFI 0.17.0 (and GirFFI-Gtk 0.17.0 in development)
+
 ## 0.8.0 / 2022-05-21
 
 * Drop support for Ruby version 2.6
@@ -42,7 +47,7 @@
 
 ## 0.3.0 / 2018-03-25
 
-* Depend on GirFFI 0.12.0  and GirFFI-Gtk 0.12.0
+* Depend on GirFFI 0.12.0 and GirFFI-Gtk 0.12.0
 * Drop support for Ruby versions below 2.3
 
 ## 0.2.0 / 2017-11-05

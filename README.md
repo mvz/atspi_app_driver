@@ -10,53 +10,57 @@ code in `lib/`.
 
 Say, your application is called `foo`. Then, in your tests, do something like this:
 
-    require 'atspi_app_driver'
+```ruby
+require 'atspi_app_driver'
 
-    describe 'The application' do
-      before do
-        @driver = AtspiAppDriver.new('foo')
+describe 'The application' do
+  before do
+    @driver = AtspiAppDriver.new('foo')
 
-        # This will boot `ruby -Ilib bin/foo`, wait for its main window to appear,
-        # and focus it.
-        @driver.boot
-      end
+    # This will boot `ruby -Ilib bin/foo`, wait for its main window to appear,
+    # and focus it.
+    @driver.boot
+  end
 
-      it 'does stuff' do
-        # Fetch the main window's atspi object
-        frame = @driver.frame
+  it 'does stuff' do
+    # Fetch the main window's atspi object
+    frame = @driver.frame
 
-        # You can now interact with the window's objects
+    # You can now interact with the window's objects
 
-        # Select item matching /bar/ from combo box:
-        box = frame.find_role :combo_box
-        item = box.find_role :menu_item, /bar/
-        box.get_action_name(0).must_equal 'press'
-        box.do_action 0
-        item.get_action_name(0).must_equal 'click'
-        item.do_action 0
+    # Select item matching /bar/ from combo box:
+    box = frame.find_role :combo_box
+    item = box.find_role :menu_item, /bar/
+    box.get_action_name(0).must_equal 'press'
+    box.do_action 0
+    item.get_action_name(0).must_equal 'click'
+    item.do_action 0
 
-        # Fetch contents of a text box
-        textbox = frame.find_role :text
-        textbox.get_text(0, 100).must_equal 'Foo bar baz'
+    # Fetch contents of a text box
+    textbox = frame.find_role :text
+    textbox.get_text(0, 100).must_equal 'Foo bar baz'
 
-        # Quit application
-        menu_item = frame.find_role :menu_item, /Quit/
-        menu_item.do_action 0
+    # Quit application
+    menu_item = frame.find_role :menu_item, /Quit/
+    menu_item.do_action 0
 
-        # Check exit status
-        status = @driver.cleanup
-        status.exitstatus.must_equal 0
-      end
+    # Check exit status
+    status = @driver.cleanup
+    status.exitstatus.must_equal 0
+  end
 
-      after do
-        # Ensure application is cleaned up
-        @driver.cleanup
-      end
-    end
+  after do
+    # Ensure application is cleaned up
+    @driver.cleanup
+  end
+end
+```
 
 ## Installation
 
-    gem install atspi_app_driver
+```
+gem install atspi_app_driver
+```
 
 ## Dependencies
 
@@ -68,9 +72,11 @@ Corrections are welcome, of course.
 
 This should work on Debian unstable.
 
-    sudo apt-get install dbus
-    sudo apt-get install libgirepository1.0-dev gobject-introspection
-    sudo apt-get install gir1.2-atspi-2.0 libatk-adaptor
+```
+sudo apt-get install dbus
+sudo apt-get install libgirepository1.0-dev gobject-introspection
+sudo apt-get install gir1.2-atspi-2.0 libatk-adaptor
+```
 
 ### Ubuntu
 

@@ -33,8 +33,11 @@ class Application
 
   def setup_gui
     @win = Gtk::Window.new :toplevel
+    box = Gtk::Box.new :vertical, 0
+    box.add Gtk::Label.new "Hello, World!"
     @button = Gtk::Button.new_with_label "Close"
-    @win.add @button
+    box.add @button
+    @win.add box
   end
 end
 

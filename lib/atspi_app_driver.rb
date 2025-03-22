@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-require "gir_ffi"
-
-GirFFI.setup :Atspi
-Atspi.load_class :Accessible
+require "gir_ffi-atspi"
 
 # Utility monkey-patches for the Atspi::Accessible class
 module AtspiAccessiblePatches

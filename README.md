@@ -11,18 +11,19 @@ code in `lib/`.
 Say, your application is called `foo`. Then, in your tests, do something like this:
 
 ```ruby
-require 'atspi_app_driver'
+require "minitest/autorun"
+require "atspi_app_driver"
 
-describe 'The application' do
+describe "The application" do
   before do
-    @driver = AtspiAppDriver.new('foo')
+    @driver = AtspiAppDriver.new("foo")
 
     # This will boot `ruby -Ilib bin/foo`, wait for its main window to appear,
     # and focus it.
     @driver.boot
   end
 
-  it 'does stuff' do
+  it "does stuff" do
     # Fetch the main window's atspi object
     frame = @driver.frame
 
@@ -31,14 +32,14 @@ describe 'The application' do
     # Select item matching /bar/ from combo box:
     box = frame.find_role :combo_box
     item = box.find_role :menu_item, /bar/
-    box.get_action_name(0).must_equal 'press'
+    _(box.get_action_name(0)).must_equal "press"
     box.do_action 0
-    item.get_action_name(0).must_equal 'click'
+    _(item.get_action_name(0)).must_equal "click"
     item.do_action 0
 
     # Fetch contents of a text box
     textbox = frame.find_role :text
-    textbox.get_text(0, 100).must_equal 'Foo bar baz'
+    _(textbox.get_text(0, 100)).must_equal "Foo bar baz"
 
     # Quit application
     menu_item = frame.find_role :menu_item, /Quit/
@@ -46,7 +47,7 @@ describe 'The application' do
 
     # Check exit status
     status = @driver.cleanup
-    status.exitstatus.must_equal 0
+    _(status.exitstatus).must_equal 0
   end
 
   after do

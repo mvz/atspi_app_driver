@@ -1,49 +1,55 @@
 ---
 - - :permit
   - LGPL-2.1+
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2017-07-23 08:26:28.235886179 Z
 - - :permit
   - MIT
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2017-07-23 08:26:32.921044461 Z
 - - :permit
   - LGPLv2+
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2017-07-23 08:26:45.647254737 Z
 - - :permit
   - LGPL-3+
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2017-07-23 08:26:50.566401469 Z
 - - :approve
   - cairo
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2017-07-23 08:26:59.771629349 Z
 - - :permit
   - New BSD
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2017-11-05 14:26:33.484403639 Z
 - - :permit
   - LGPL-2.1
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2017-11-05 14:26:43.080893712 Z
 - - :permit
   - Simplified BSD
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2020-08-23 09:38:52.530101480 Z
+- - :permit
+  - ruby
+  - :who:
+    :why:
+    :versions: []
+    :when: 2025-04-19 17:42:04.831924313 Z

@@ -23,14 +23,4 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "gir_ffi-atspi", "~> 0.1.0"
-
-  spec.add_development_dependency "gir_ffi-gtk", "~> 0.18.0"
-  spec.add_development_dependency "minitest", "~> 6.0"
-  spec.add_development_dependency "minitest-focus", "~> 1.4"
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rake-manifest", "~> 0.2.0"
-  spec.add_development_dependency "rubocop", "~> 1.76"
-  spec.add_development_dependency "rubocop-minitest", "~> 0.38.0"
-  spec.add_development_dependency "rubocop-packaging", "~> 0.6.0"
-  spec.add_development_dependency "rubocop-performance", "~> 1.25"
 end

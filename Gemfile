@@ -5,7 +5,7 @@ source "https://rubygems.org"
 gemspec
 
 group :development, :test do
-  gem "gir_ffi-gtk", "~> 0.18.0"
+  gem "gir_ffi-gtk", "~> 0.19.0"
   gem "minitest", "~> 6.0"
   gem "minitest-focus", "~> 1.4"
   gem "rake", "~> 13.0"

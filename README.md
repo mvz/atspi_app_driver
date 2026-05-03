@@ -81,8 +81,7 @@ sudo apt-get install gir1.2-atspi-2.0 libatk-adaptor
 
 ### Ubuntu
 
-Please try the instructions for Debian. This will probably not work on Ubuntu
-12.04. Again, corrections and additions are welcome.
+Please try the instructions for Debian. Again, corrections and additions are welcome.
 
 ### Other OS
 
@@ -96,5 +95,5 @@ on GitHub.
 
 ## License
 
-Copyright &copy; 2015-2018 [Matijs van Zuijlen](http://www.matijs.net).
+Copyright &copy; 2015&;ndash;2026 [Matijs van Zuijlen](http://www.matijs.net).
 See LICENSE for details.

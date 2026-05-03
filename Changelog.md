@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.11.0 / 2026-05-03
+
+* Support Ruby 3.2 through 4.0, dropping support for Ruby 3.1
+  ([#113] and [#118] by [mvz])
+* Update `gir_ffi-atspi` dependency ([#122] by [mvz])
+
+[#113]: https://github.com/mvz/atspi_app_driver/pull/113
+[#118]: https://github.com/mvz/atspi_app_driver/pull/118
+[#122]: https://github.com/mvz/atspi_app_driver/pull/122
+
 ## 0.10.1 / 2025-03-23
 
 * Depend on GirFFI-Atspi to provide Atspi bindings. This makes overrides from

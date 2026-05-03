@@ -54,7 +54,8 @@ describe "test driving an application without an accessible window" do
   end
 
   it "will fail to boot" do
-    _(proc { @driver.boot }).must_raise RuntimeError, /App not/
+    error = _(proc { @driver.boot }).must_raise RuntimeError
+    _(error.message).must_match(/App not/)
   end
 
   after do
